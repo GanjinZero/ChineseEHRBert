@@ -1,6 +1,7 @@
 import argparse
 import os
 import time
+import sys
 
 
 parser = argparse.ArgumentParser()
@@ -9,15 +10,28 @@ parser.add_argument("-s", "--split_line", type=int, default=500000)
 parser.add_argument("-p", "--split_path", default="./temp_split/")
 parser.add_argument("-o", "--output_path")
 parser.add_argument("-l", "--max_length", type=int, default=128)
-parser.add_argument("-b", "--bert_base_dir", default="/media/sdb2/chc/EHRBERT/chinese_L-12_H-768_A-12")
+parser.add_argument("-b", "--bert_base_dir", default="/home/user001/user001/thuys/chinese_L-12_H-768_A-12")
 
 args = parser.parse_args()
 
 # Split First
-os.system(f"mkdir {args.split_path}")
-os.system("split -d -l {} {} sp".format(str(args.split_line), args.file_path))
-os.system(f"mv ./sp* {args.split_path}")
-os.system(f"mkdir {args.output_path}")
+if os.path.isdir(args.file_path):
+    os.system(f"mkdir {args.split_path}")
+    for root, dirs, files in os.walk(args.file_path):
+        for f_p in files:
+            inp_file = os.path.join(root, f_p)
+            inp_basename = os.path.basename(f_p).split(".")[0]
+            os.system("split -a 3 -d -l {} {} {}".format(str(args.split_line), inp_file, inp_basename + "_split_"))
+            os.system(f"mv ./{inp_basename}_split_* {args.split_path}")
+    os.system(f"mkdir {args.output_path}")
+else:
+    os.system(f"mkdir {args.split_path}")
+    inp_basename = os.path.basename(args.file_path).split(".")[0]
+    os.system("split -a 3 -d -l {} {} {}".format(str(args.split_line), args.file_path, inp_basename + "_split_"))
+    os.system(f"mv ./{inp_basename}_split_* {args.split_path}")
+    os.system(f"mkdir {args.output_path}")
+
+# sys.exit()
 
 # Make pretrain data
 for root, dirs, files in os.walk(args.split_path):
@@ -35,7 +49,7 @@ for root, dirs, files in os.walk(args.split_path):
                     --max_sequence_length={str(args.max_length)} \
                     --max_predictions_per_seq={str(round(0.15 * args.max_length))} \
                     --random_seed=72 \
-                    --dupe_factor=5")
+                    --dupe_factor=2")
         end_time = time.time()
         print(f"{opt_basename} done. Use time {round(end_time - start_time)}s.")
 print("All Done.")
