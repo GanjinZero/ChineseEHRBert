@@ -97,7 +97,7 @@ def test_is_not_empty():
 processor using original func.
 """
 def article_processor(article):
-    replaced_list = ['。','！','？','!','?','……']
+    replaced_list = ['。','！','？','!','?','……']#, ',', "，", ";", "；"]
     sub_dict = {str:str+'\n' for str in replaced_list}
     res = article
     for rep,sub in sub_dict.items():
