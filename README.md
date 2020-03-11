@@ -42,12 +42,12 @@ sh pretrain512.sh
 ```
 
 # test
-Test four Chinese medical NLP tasks by BERT in one line! Two NER tasks, one QA task and one RE task.
+Test Chinese medical NLP tasks by BERT in one line! Two NER tasks, one QA task, one RE task and one sentence similarity task.
 ```
 cd ./test/
 sh run_test.sh
 ```
-Tasks include [CCKS2019NER](https://www.biendata.com/competition/CCKS2019_1/), [cMedQA2](https://github.com/zhangsheng93/cMedQA2), [Tianchi\_NER](https://tianchi.aliyun.com/dataset/dataDetail?spm=5176.12281978.0.0.75926bacsx0LyL&dataId=22288), [Tianchi\_RE](https://tianchi.aliyun.com/dataset/dataDetail?spm=5176.12281978.0.0.75926bacsx0LyL&dataId=22288).
+Tasks include [CCKS2019NER](https://www.biendata.com/competition/CCKS2019_1/), [cMedQA2](https://github.com/zhangsheng93/cMedQA2), [Tianchi\_NER](https://tianchi.aliyun.com/dataset/dataDetail?spm=5176.12281978.0.0.75926bacsx0LyL&dataId=22288), [Tianchi\_RE](https://tianchi.aliyun.com/dataset/dataDetail?spm=5176.12281978.0.0.75926bacsx0LyL&dataId=22288), [ncov2019\_sim](https://tianchi.aliyun.com/competition/entrance/231776/introduction).
 
 # Results
 Results compared with original BERT and ChineseEHRBert. Results are preparing.

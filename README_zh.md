@@ -42,12 +42,12 @@ sh pretrain512.sh
 ```
 
 # test
-一行测试4个中文NLP任务!两个NER任务，一个RE任务，一个QA任务。具体说明见**./test/readme.md**。
+一行测试中文NLP任务!两个NER任务，一个RE任务，一个QA任务，一个句子相似性判断任务。具体说明见**./test/readme.md**。
 ```
 cd ./test/
 sh run_test.sh
 ```
-包含了如下任务[CCKS2019NER](https://www.biendata.com/competition/CCKS2019_1/), [cMedQA2](https://github.com/zhangsheng93/cMedQA2), [Tianchi\_NER](https://tianchi.aliyun.com/dataset/dataDetail?spm=5176.12281978.0.0.75926bacsx0LyL&dataId=22288), [Tianchi\_RE](https://tianchi.aliyun.com/dataset/dataDetail?spm=5176.12281978.0.0.75926bacsx0LyL&dataId=22288)。
+包含了如下任务[CCKS2019NER](https://www.biendata.com/competition/CCKS2019_1/), [cMedQA2](https://github.com/zhangsheng93/cMedQA2), [Tianchi\_NER](https://tianchi.aliyun.com/dataset/dataDetail?spm=5176.12281978.0.0.75926bacsx0LyL&dataId=22288), [Tianchi\_RE](https://tianchi.aliyun.com/dataset/dataDetail?spm=5176.12281978.0.0.75926bacsx0LyL&dataId=22288), [ncov2019_sim](https://tianchi.aliyun.com/competition/entrance/231776/introduction)。
 
 # Results
 结果包括用Google训练的中文Bert和用ChineseEhrBert分别fine-tune之后的结果。结果正在准备中。
