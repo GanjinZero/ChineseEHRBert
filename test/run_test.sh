@@ -135,6 +135,6 @@
   echo -e '\n\n===== TianChi RE =====' >> test_result.txt
   cat ./diabetes_re/output/test_result.txt >> test_result.txt
   echo -e '\n\n===== cMedQA2 QA =====' >> test_result.txt
-  cat ./cmedqa2/output/test_result.txt >> test_result.txt
+  cat ./cmedqa2_qa/output/test_result.txt >> test_result.txt
   echo -e '\n\n===== nCov2019 SIM =====' >> test_result.txt
   cat ./ncov2019_sim/output/eval_summary.txt >> test_result.txt
