@@ -56,6 +56,6 @@ Results compared with original BERT and ChineseEHRBert. Results are preparing.
 
 # Author
 - [Zheng Yuan](https://github.com/GanjinZero)
-- Peng Zhao
+- [Peng Zhao](https://github.com/zp9763)
 - Chen Yu
 - [Sheng Yu](http://www.stat.tsinghua.edu.cn/teambuilder/faculty/yusheng/)
