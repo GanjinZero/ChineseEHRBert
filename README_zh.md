@@ -56,6 +56,6 @@ sh run_test.sh
 
 # Author
 - [袁正](https://github.com/GanjinZero)
-- 赵芃
+- [赵芃](https://github.com/zp9763)
 - 俞辰
 - [俞声](http://www.stat.tsinghua.edu.cn/teambuilder/faculty/yusheng/)
